@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Josh Queseberry | Programmer</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- NOTE: "shrink-to-fit=no" necessary for older (< 9.0) versions of Safari. -->
+
+<!-- Font-awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<%= favicon_link_tag asset_path('favicon-16x16.png'), :rel => 'icon', :type =>  'image/png' %>
+
+</head>
+
+<body data-spy="scroll" data-offset="50">
+
+
+<%= yield %>
+
+
+<!--back to top-->
+<a href="#" class="back-to-top hidden-xs-down" id="back-to-top"><i class="fa fa-arrow-circle-o-up"></i></a>
+
+</body>
+</html>

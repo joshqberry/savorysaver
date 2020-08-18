@@ -1,0 +1,38 @@
+
+.dropdown-menu{
+    // note that border-radius is at 0px;
+    // only needs to be set if border width is increased from 0
+    border:0px;
+  }
+
+.dropdown-menu{
+   a.dropdown-item{
+        text-align:right;
+        // text-transform: capitalize;
+        font-size:.9rem;
+        &:hover, &:focus{
+            background: transparent;
+            // color: red;
+        }
+      }
+    a.dropdown-item-bold{
+          text-align:right;
+          font-weight: bold;
+          // text-transform: capitalize;
+          font-size:1.2rem;
+          &:hover, &:focus{
+              background: transparent;
+              color: red;
+             }
+    }
+    a.dropdown-item-link{
+         text-align:right;
+         // text-transform: capitalize;
+         font-size:.9rem;
+         &:hover, &:focus{
+             background: transparent;
+             color: red;
+         }
+       }
+
+}

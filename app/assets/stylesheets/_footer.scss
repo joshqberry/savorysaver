@@ -1,0 +1,21 @@
+
+.footer{
+    background: #333;
+    height: 40px;
+    a{
+        color: #fff;
+        i{
+          width: 6px;
+          height: 6px;
+          line-height: 6px;
+
+           display: block;
+        }
+        &:hover{
+          background: none;
+        }
+    }
+    span{
+        color: rgba(#fff,.6);
+    }
+}

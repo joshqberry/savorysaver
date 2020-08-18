@@ -1,0 +1,89 @@
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url("../../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.7.0");
+    src: url("../../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format('embedded-opentype'),url("../../bower_components/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0") format('woff2'),url("../../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.7.0") format('woff'),url("../../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.7.0") format('truetype'),url("../../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i');
+
+$title-font:'Playfair Display', serif;
+$primary-color:#f73939;
+
+body{
+    letter-spacing: 0px;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 400;
+    font-family: $title-font;
+}
+h4,.h4,h5,.h5,h6,.h6{
+    font-family: $base-font;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.work-card .overlay-content h4{
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+.hero h1{
+    font-family: $title-font;
+    font-weight: 700;
+}
+
+
+@media(max-width:991px){
+    button.navbar-toggler{
+        position: absolute;
+        right: 15px;
+        top: 7px;
+        background: transparent;
+        border:0px;
+        cursor:pointer;
+        .navbar-toggler-icon{
+            background: none;
+            background-image: none;
+            &:before{
+                font-family: $base-font;
+                content: "\e68e";
+                color:$primary-color;
+                font-size:32px;
+            }
+        }
+        .fa{
+          color: red;
+          font-size: 50px;
+        }
+    }
+
+    .hero h1{
+        font-size: 2rem;
+        line-height: 2.6rem;
+    }
+
+    .text-title{
+        letter-spacing: 0px;
+        font-size: 1.5rem;
+    }
+
+    .links-col{
+        padding: 50px 15px;
+    }
+    .collapse.show{
+        // height: 250px;
+        margin-top:0;
+        overflow-y: scroll;
+    }
+
+}
+
+.hero-image img {
+  max-width: 30%!important;
+}
