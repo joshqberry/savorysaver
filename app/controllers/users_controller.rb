@@ -33,21 +33,19 @@ end
   def edit
   end
 
-<<<<<<< HEAD
 def update
   if @user.update_attributes(params.require(:user).permit(:first_name, :last_name, :email, :password,
                                  :password_confirmation, :role))
     redirect_to user_path(@user), notice: "User has been updated"
   else
     redirect_to users_path
-=======
+
   def update
     if @user.update_attributes(params.require(:user).permit(:first_name, :last_name, :email, :role))
       redirect_to user_path(@user), notice: "User has been updated"
     else
       render :edit
     end
->>>>>>> be1636e7dd0eb5baaab97f4db817b6d25b7e5904
   end
 
   def destroy
