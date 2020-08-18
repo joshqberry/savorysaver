@@ -1,0 +1,57 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Add A Recipe', new_recipe_path, class:"btn btn-primary" %>
+  </div>
+  <h1><%= @recipe.title %></h1>
+</div>
+
+
+
+<div class="recipe">
+<div class="recipe-description"><strong>Description:</strong> <%= @recipe.description %></div>
+
+<div class="recipe-description"><strong>Instruction: </strong><%= @recipe.instruction %></div>
+</div>
+<div>
+  <%= link_to 'Edit this Recipe', edit_recipe_path(@recipe), class:"btn btn-primary" %>
+</div>
+
+<%= form_for @user_recipe do |f| %>
+<%= f.label :user_id, "Share with" %>
+<%= f.collection_select :user_id, User.order(email: :asc).all, :id, :email, {include_blank: "Select User"}  %>
+
+<%= f.hidden_field :recipe_id, :value => @recipe.id %>
+<%= f.submit "Share", class: "btn btn-primary like-button" %>
+<% end %>
+
+<div>
+  <% if @recipe.reviews.count >= 1 %>
+    <div class="pull-right">
+      <%= link_to 'Add a Review', new_recipe_review_path(@recipe), class:"btn btn-primary" %>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Reviews</th>
+          <th>Reviewer</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <% @recipe.reviews.each do |review| %>
+        <td><%= link_to truncate(review.description, :length =>70), recipe_review_path(@recipe, review)%></td>
+        <td><%= review.reviewer %> </td>
+        <td><%= link_to "edit", edit_recipe_review_path(@recipe, review) %> &nbsp;&nbsp;&nbsp;</td>
+        <td><%= link_to "delete", recipe_review_path(@recipe, review), method: :delete,
+            data: { confirm: "You sure?" } %>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+  <div class="new-review col-md-offset-5 col-md-12 ">
+    <%= link_to 'Add a Review', new_recipe_review_path(@recipe), class:"btn btn-primary" %>
+  </div>
+  <% end %>
+</div>

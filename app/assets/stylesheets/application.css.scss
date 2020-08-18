@@ -1,105 +1,154 @@
-// @import "bootstrap-sprockets";
-
+@import "bootstrap-sprockets";
 @import "bootstrap";
-@import "variables";
-@import "base-styles";
-@import "animations";
-@import "buttons";
-@import "visual-effects";
-@import "dropdown";
-@import "footer";
-@import "headers";
-@import "hero-images";
-@import "icons";
-@import "portfolio";
-@import "base-fonts";
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Quicksand:400,700|Bree+Serif);
 
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* font-families */
+// font-family: 'Poiret One', cursive;
+// font-family: 'Quicksand', sans-serif;
+// font-family: 'Bree Serif', serif;
 
 
-.hero-row {
-  margin-top:20px
+/*Reset browser defaults */
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
 }
 
-#skills{
-  paddding-top:90px;
-  padding-bottom: 0px;
-}
-
-#skill-filter-nested{
-  padding-top:10px;
-  padding-bottom: 20px;
-}
-
-#portfolio{
-  padding-top:60px;
-  padding-bottom: 70px;
-}
-
-#footer{
-  padding-top:40px;
-  padding-bottom: 90px;
-}
-
-#softskills{
-  padding-top:30px;
+body{
+  background-image: image-url('restaurant_icons.png');
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14pt;
+  padding-top: 50px;
   padding-bottom: 30px;
 }
 
-.wow{
-  margin-bottom:20px;
-}
-
-
-.fa-arrow-circle-o-up {
- font-size: 80px;
-}
-
- .fa-twitter {
+#wrapper{
+  background-color:white;
+  opacity: .7;
+  border-left: 5px solid #B7250E;
+  border-right: 5px solid #B7250E;
+  border-radius: 10px;
   padding: 20px;
-  font-size: 30px;
-  width: 30px;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin-bottom: 20px;
+  display: inline-block;
+
+}
+html, body {
+    height: 100%;
+}
+
+.fill {
+    min-height: 100%;
+    height:100%;
+}
+.navbar-brand{
+  font-family: 'Bree Serif', serif;
+  font-size: 18pt;
+}
+
+.yummy-yums{
+  font-family: 'Bree Serif', serif;
+  color: #B7250E;
+}
+.navbar-default .navbar-brand{
+  color: #B7250E;
+}
+.navbar-default .navbar-brand:hover{
+  color:#777;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #B7250E;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.like-button:hover{
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+footer {
+  background-color: #e7e7e7;
+  position: relative;
+  color: #B7250E;
+  padding: 10px;
+  // position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer{
+  text-align:center;
+}
+
+.page-header h1 {
+  text-align:center;
+}
+.action {
+  text-align:center;
+}
+
+.btn-primary{
+  background-color:#B7250E;
+  border-color:#B7250E;
+}
+.btn-primary:hover{
+  background-color:#B7250E;
+  border-color:#B7250E;
+}
+
+.glyphicon {
+  position: relative;
+  top: 1px;
+  color: #B7250E;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.alert{
   text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
 }
 
-.fa:hover {
-    opacity: 0.7;
+.like-button,
+.like-button:hover{
+  background-color:transparent;
+  color: #B7250E;
+  font-size:14pt;
+}
+#user_recipe_user_id{
+  margin-right: 10px;
+}
+.recipe{
+  padding: 20px 0;
 }
 
-.foliopic {
-  visibility: hidden;
-  width:255px;
-  height: 300px;
-
+.new-review{
+  margin-top: 10%;
 }
 
-.skillstag {
-  width: 35px;
-  margin-top: 5px;
-}
-
-.filter-item-small {
-  width: 15%;
-  margin-bottom: 30px;
-}
-
-.project-pic-filter-item {
-  margin-bottom: 30px;
+.description,
+.instruction{
+  height: 200px !important;
 }

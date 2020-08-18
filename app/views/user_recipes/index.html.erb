@@ -1,0 +1,50 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Add A Recipe', new_recipe_path, class:"btn btn-primary" %>
+  </div>
+  <h1>Your recipes</h1>
+</div>
+<!-- <%# if @user.user_recipes.nil? %>
+<div class="col-md-offset-2">
+<p> You don't have any recipes yet! Browse all recipes or add your own! </p>
+</div>
+<%#else %> -->
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Recipe
+      </th>
+      <th>
+        Favorite
+      </th>
+      <tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% @user_recipes.each do |user_recipe| %>
+          <td>
+            <%= link_to user_recipe.recipe.title, recipe_path(user_recipe.recipe_id)%>
+          </td>
+          <td>
+            <% if user_recipe.user_like? %>
+            <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+            <% end %>
+          </td>
+          <td>
+            <% unless user_recipe.user_like? %>
+            <%= button_to "Like", like_path(user_recipe), class: "btn btn-primary like-button" %>
+            <% else %>
+            <%= button_to "Unlike", unlike_path(user_recipe), class: "btn btn-primary like-button"%>
+            <% end %>
+          </td>
+          <td>
+            <%= button_to "Remove", user_recipe_path(user_recipe), method: :delete, class: "btn btn-primary like-button" %>
+          </td>
+        </tr>
+        <%end%>
+
+      </tbody>
+
+    </table>
+<%# end %>
