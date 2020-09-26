@@ -60,4 +60,114 @@
     </div>
   </footer> -->
 </body>
+
+
+<div id="container">
+        <div class="message">
+            <p>Hmm, you look familiar. While you're waiting for our reply, here's a GIF we think you should see.</p>
+            <iframe src="https://giphy.com/embed/Me7rnCGjSKKFfwXQir" width="280" height="140" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p><a href="https://giphy.com/gifs/theshadowsfx-what-we-do-in-the-shadows-jackie-daytona-i-now-go-by-Me7rnCGjSKKFfwXQir"></a></p>
+        <button class="enough" onclick="enough()" >that's quite enough, thank you</button>
+    </div>
+
+  <style>
+    #container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      background-image: linear-gradient(to right, blue, lightblue);
+      background-size:cover;
+      color: white;
+      width: 350px;
+      border-radius: 5px;
+      padding: 16px 8px 8px;
+      box-sizing: border-box;
+    }
+    #container .enough {
+      background-color: blue;
+      display: inline-block;
+      border-radius: 5px;
+      border: 2px solid gray;
+      padding: 5px;
+      width: 280px;
+    }
+    #container .enough:hover {
+      opacity: 25%;
+    }
+   #container .message {
+      text-align: left;
+      padding: 10px 30px;
+    }
+</style>
+
+<script>
+
+    // A custom function to set cookies
+    function setCookie(name, value, daysToLive) {
+          // Encode value in order to escape semicolons, commas, and whitespace
+        var cookie = name + "=" + encodeURIComponent(value);
+        if(typeof daysToLive === "number") {
+          // Sets the max-age attribute so that the cookie expires
+          //   after the specified number of days
+        cookie += "; max-age=" + (daysToLive*24*60*60);
+        document.cookie = cookie;
+        }
+    }
+
+    // A custom function to get cookies
+    function getCookie(name) {
+          // Split cookie string and get all individual name=value pairs in an array
+        var cookieArr = document.cookie.split(";");
+          // Loop through the array elements
+        for(var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+          // Removing whitespace at the beginning of the cookie name
+          // and compare it with the given string
+        if(name == cookiePair[0].trim()) {
+          // Decode the cookie value and return
+        return decodeURIComponent(cookiePair[1]);
+            }
+        }
+        // Return null if not found
+        return null;
+    }
+
+    // A custom function to check cookies
+     function checkCookie2() {
+          // check for cookie, and if it exists, execute code
+        var firstClick = getCookie("firstClick");
+        if(firstClick == "clickedAlready") {
+
+          var newItem = document.createElement("div");
+          var paragraf = document.getElementById("container");
+          newItem.appendChild(paragraf);
+          var list = document.getElementById("insertGifHere");
+          list.insertBefore(newItem, list.childNodes[0]);
+
+          document.getElementById("container").style.display = "block";
+            // container will have our alert message
+        } else {
+              // Set cookie using our custom function
+            alert("this is your first click");
+            setCookie("firstClick", "clickedAlready", 1);
+            document.getElementById("bttn").style.opacity = "50%";
+        };
+    };
+
+    function enough () {
+      document.getElementById("container").style.display = "none";
+    }
+
+    // Check the cookie on page load
+    // window.onload = checkCookie;
+    // DO THIS ON BUTTON CLICK:
+    // window.onload = checkCookie2;
+
+	// Uncomment the following line to delete this cookie
+  // setCookie("firstClick", "", 0);
+</script>
+
+
 </html>
